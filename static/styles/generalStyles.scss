@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+span {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+.hideOnDesktops {
+    @include desktops {
+        display: none;
+    }
+}
+
+.hideOnLaptops {
+    @include laptops {
+        display: none;
+    }
+}
+
+.hideOnTablets {
+    @include tablets {
+        display: none;
+    }
+}
+
+.hideOnPhones {
+    @include phones {
+        display: none;
+    }
+}
+
+.showOnDesktops {
+    @include desktops {
+        display: block;
+    }
+}
+
+.showOnLaptops {
+    @include laptops {
+        display: block;
+    }
+}
+
+.showOnTablets {
+    @include tablets {
+        display: block;
+    }
+}
+
+.showOnPhones {
+    @include phones {
+        display: block;
+    }
+}
+
+.container {
+  width: min(100% - 2rem, 120rem);
+  margin-inline: auto;
+}

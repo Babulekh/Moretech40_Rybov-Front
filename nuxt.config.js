@@ -18,7 +18,14 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [{ src: "@/static/styles/generalStyles.scss", lang: "scss" }],
+
+  styleResources: {
+    scss: [
+      "@/static/styles/variables/colors.scss",
+      "@/static/styles/variables/devices.scss",
+    ],
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -27,7 +34,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ["@nuxtjs/style-resources"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

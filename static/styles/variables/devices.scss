@@ -1,0 +1,28 @@
+$screenSizeDesktops: 1920px;
+$screenSizeLaptops: 1220px;
+$screenSizeTablets: 992px;
+$screenSizePhones: 640px;
+
+@mixin desktops {
+  @media screen and (max-width: $screenSizeDesktops) {
+    @content;
+  }
+}
+
+@mixin laptops {
+  @media screen and (max-width: $screenSizeLaptops) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: $screenSizeTablets) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $screenSizePhones) {
+    @content;
+  }
+}
