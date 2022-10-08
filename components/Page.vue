@@ -1,11 +1,22 @@
 <template>
-    <div class="v-page">
-        <slot></slot>
-    </div>
+  <div class="v-page">
+    <Header />
+    <slot>
+
+    </slot>
+    <Footer />
+  </div>
 </template>
 
 <script>
-export default {
+import Footer from './Footer.vue';
+import Header from './Header.vue';
 
+
+export default {
+  components: {
+    Footer,
+    Header
+  }
 }
 </script>
