@@ -17,7 +17,7 @@ export default {
   },
   async asyncData({ params }) {
     return {
-      usernameParam: params.userName,
+      usernameParam: params.username,
     };
   },
 }

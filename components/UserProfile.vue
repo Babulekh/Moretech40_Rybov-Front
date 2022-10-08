@@ -2,7 +2,6 @@
   <div class="userProfile" v-if="!userObject.detail">
     <h1>{{ userObject.username }}</h1>
     <Wallet :publicKey="userObject.publicKey" />
-    <pre>{{ userObject }}</pre>
   </div>
   <div v-else>
     User with {{ username }} username not found

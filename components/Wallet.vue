@@ -2,6 +2,7 @@
   <div>
     <h2>Кошелёк</h2>
     <p>Баланс: {{ userBalance }}</p>
+    <p>Адрес: {{ publicKey }}</p>
   </div>
 </template>
 
@@ -19,7 +20,7 @@ export default {
     };
   },
   props: {
-
+    publicKey: String,
   },
   async mounted() {
     const userBalanceObject = await this.getWalletBalance(this._props.publicKey);
