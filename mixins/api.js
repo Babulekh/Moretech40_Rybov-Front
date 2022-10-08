@@ -1,8 +1,7 @@
 const api = {
   data() {
     return {
-      baseUrl:
-        "https://7744-109-252-41-241.eu.ngrok.io/",
+      baseUrl: "https://7744-109-252-41-241.eu.ngrok.io/",
     };
   },
   methods: {
