@@ -1,42 +1,25 @@
 <template>
-  <Page v-if="!userObject.detail">
-    <h1>{{ userObject.username }}</h1>
-    <Wallet />
-    {{ userObject }}
-  </Page>
-  <Page v-else>
-    {{ userObject.detail }}
+  <Page>
+    <UserProfile :username="usernameParam" />
   </Page>
 </template>
 
 <script>
-import Wallet from '~/components/Wallet.vue';
-import Page from '~/components/Page.vue';
-
-import api from '~/mixins/api.js';
+import Page from '@/components/Page.vue';
+import UserProfile from '@/components/UserProfile.vue';
 
 
 export default {
-  name: 'Personal',
-  mixins: [api],
+  name: 'UserPage',
   components: {
-    Wallet,
-    Page
-  },
-  data() {
-    return {
-      usernameParam: '',
-      userObject: {},
-    };
+    Page,
+    UserProfile
   },
   async asyncData({ params }) {
     return {
       usernameParam: params.username,
     };
   },
-  async mounted() {
-    this.userObject = await this.getUser(this.usernameParam);
-  }
 }
 </script>
 

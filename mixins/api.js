@@ -2,7 +2,7 @@ const api = {
   data() {
     return {
       baseUrl:
-        "https://a0df-2a00-1370-817a-1177-51f6-d277-878a-8613.eu.ngrok.io/", // todo
+        "https://7744-109-252-41-241.eu.ngrok.io/",
     };
   },
   methods: {
@@ -15,7 +15,11 @@ const api = {
         },
       });
 
-      return await response.json();
+      if (response.ok) {
+        return await response.json();
+      } else {
+        return response.json();
+      }
     },
     async post(path, payload) {
       const response = await fetch(`${this.baseUrl}${path}`, {
@@ -23,11 +27,16 @@ const api = {
         mode: "cors",
         headers: {
           "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
       });
 
-      return await response.json();
+      if (response.ok) {
+        return await response.json();
+      } else {
+        return response.json();
+      }
     },
 
     async getUser(userName) {
@@ -38,7 +47,10 @@ const api = {
     },
 
     async auth(userName) {
-      return await this.post(`auth/${userName}`, { username: userName });
+      return await this.post('auth/login/', {
+        username: userName,
+        password: "secret",
+      });
     },
   },
 };

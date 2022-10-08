@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import api from '~/mixins/blockhainApi.js';
+import api from '@/mixins/blockhainApi.js';
 
 
 export default {
@@ -15,7 +15,6 @@ export default {
   ],
   data() {
     return {
-      publicKey: '0x79a56DcA91B812cc71264c8A60638D64F7435BC9', // todo setting public key from user's data
       userBalance: 0,
     };
   },
@@ -23,7 +22,7 @@ export default {
 
   },
   async mounted() {
-    const userBalanceObject = await this.getWalletBalance(this.publicKey);
+    const userBalanceObject = await this.getWalletBalance(this._props.publicKey);
     this.userBalance = userBalanceObject.coinsAmount;
   }
 }
