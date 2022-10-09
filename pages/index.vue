@@ -1,23 +1,19 @@
 <template>
   <Page>
-    <Section size="S">
-      <h1 class="v-testTitle">Hello</h1>
-      
-    </Section>
+    <AuthForm />
   </Page>
 </template>
 
 <script>
-import Page from '~/components/Page.vue';
-import Section from '~/components/Section.vue';
+import Page from '@/components/Page.vue';
+import AuthForm from '@/components/forms/AuthForm.vue';
+
+
 export default {
-  name: "Auth",
-  components: { Page, Section }
+  components: { Page, AuthForm }
 }
 </script>
 
 <style lang="scss">
-.v-testTitle {
-  color: $accentRed;
-}
+
 </style>

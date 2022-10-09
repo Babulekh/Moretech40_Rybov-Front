@@ -1,7 +1,7 @@
 const api = {
   data() {
     return {
-      baseUrl: "https://7744-109-252-41-241.eu.ngrok.io/",
+      baseUrl: "https://addd-2a00-1370-817a-1177-c4c5-bf9-ad74-3077.eu.ngrok.io/",
     };
   },
   methods: {

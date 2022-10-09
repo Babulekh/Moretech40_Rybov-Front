@@ -1,6 +1,5 @@
 <template>
   <div class="userProfile" v-if="!userObject.detail">
-    <h1>{{ userObject.username }}</h1>
     <Wallet :publicKey="userObject.publicKey" />
   </div>
   <div v-else>
